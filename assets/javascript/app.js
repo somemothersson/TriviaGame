@@ -1,6 +1,6 @@
 //declare variables
 let timer = 0;
-let logic = {
+let trivia = {
     endState: {
         right: "You are Correct!",
         wrong: "You are Incorrect!",
@@ -74,7 +74,7 @@ let logic = {
         gif: "",
     },
 };
-console.log(logic.qOne.question, logic.qOne.answers[2].text)
+console.log(trivia.qOne.question, trivia.qOne.answers[2].text)
 //click start button to begin the game - only to begin
 //timer will be displayed
     //timer will start counting down from 25
