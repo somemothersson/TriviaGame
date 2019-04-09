@@ -74,6 +74,16 @@ let trivia = {
         gif: "",
     },
 };
+let choices = $("<choices>")
+let btn1 = $("<button>")
+let btn2 = $("<button>")
+let btn3 = $("<button>")
+let btn4 = $("<button>")
+let question = "";
+let result = "";
+let gif = ""
+let wins = 0;
+let loses = 0;
 console.log(trivia.qOne.question, trivia.qOne.answers[2].text)
 //click start button to begin the game - only to begin
 //timer will be displayed
