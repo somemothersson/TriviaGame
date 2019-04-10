@@ -2,7 +2,7 @@
 - [x] Build out folder structure
 - [x] Create `Readme`
 - [] Submit Links to BCS
-- [] Create Basic HTML Layout
+- [x] Create Basic HTML Layout
 - [] Get Javascript and jQuery funcationality Working
 - [] Style
 - [] Test
@@ -15,7 +15,6 @@ In this assignment, You'll create a Trivia game using JavaScript for the logic a
 
 ### Option Two: Advanced Assignment (Timed Questions)
 
-![Advanced](Images/2-advanced.jpg)
 
 **[Click Here to Watch the demo](https://youtu.be/xhmmiRmxQ8Q)**.
 
