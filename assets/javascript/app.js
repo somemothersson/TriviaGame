@@ -98,34 +98,27 @@ console.log(trivia.qOne.question, trivia.qOne.answers[2].text)
 //Document ready
 $( document ).ready(function() {
 let btn01 = trivia.states.start;
-let btn02 = "";
-let btn03 = "";
-let btn04 = "";
-let btn1 = $('<input/>').attr({ type: 'button', name:'btn1', value: btn01});
-let btn2 = $("<button>").attr({ type: 'button', name:'btn1', value: btn02});
-let btn3 = $("<button>").attr({ type: 'button', name:'btn1', value: btn03});
-let btn4 = $("<button>").attr({ type: 'button', name:'btn1', value: btn04});
+
 
 //function click to start game
+//reset function is the start button
+//function to load question set
 
 content.html(btn1);
-if (
-    $(".btn1").on("click", function() {
+function questionOne() {
+    //create buttons
+    for (let i = 0; i < trivia.qOne.answers.length; i++){
+    console.log(trivia.qOne.answers[i])
+    let button = $('<button>').text(trivia.qOne.answers[i]);
+    $(".content").append(button);
     
-    btn01 = trivia.qOne.answers[1];
-    btn02 = trivia.qOne.answers[2];
-    btn03 = trivia.qOne.answers[3];
-    btn04 = trivia.qOne.answers[4];
+    
+    
+}
 
-    content.html(btn1);
-    content.html(btn2);
-    content.html(btn3);
-    content.html(btn4);
     
 
-
-
-});
+}
 // var row = $("<tr>");
 
 // var title = $("<td>").text(response.Title)
