@@ -78,14 +78,14 @@ let trivia = {
 };
 let question = "";
 let choices = $("<choices>")
-var content = $(".content")
+let test = ["answer1", "answer2", "answer3","answer4"]
 
 let result = "";
 let gif = "";
 let wins = 0;
 let loses = 0;
 let intro = "Start"
-console.log(trivia.qOne.question, trivia.qOne.answers[2].text)
+
 // The Source Family
 // The Peoples Temple
 // Heavens Gate
@@ -97,26 +97,47 @@ console.log(trivia.qOne.question, trivia.qOne.answers[2].text)
 //Family International
 //Document ready
 $( document ).ready(function() {
-let btn01 = trivia.states.start;
-
+// let btn01 = trivia.states.start;
+// var content = $(".content")
 
 //function click to start game
 //reset function is the start button
 //function to load question set
+startPage();
+// $("#button").on("click", function){
+//     questionOne()
 
-content.html(btn1);
+// });
+// content.append(btn1);
 function questionOne() {
     //create buttons
+    $(".content").empty();
     for (let i = 0; i < trivia.qOne.answers.length; i++){
-    console.log(trivia.qOne.answers[i])
-    let button = $('<button>').text(trivia.qOne.answers[i]);
+    // console.log(test[i])
+    let button = $('<button>').text(trivia.qOne.answers[i].text);
+    button.val(trivia.qOne.answers[i].correct);
     $(".content").append(button);
-    
+    $("button").on("click", function(event) {
+        if ($(this).val = true){
+            console.log("is true")
+        }
+
+    });   
     
     
 }
 
+}
+function startPage(){
+    let startButton = $('<button>').text(trivia.states.start);
+    $(".content").append(startButton);
+    $("button").on("click", function(event) {
+        
+        
+        questionOne();
     
+    
+    });  
 
 }
 // var row = $("<tr>");
