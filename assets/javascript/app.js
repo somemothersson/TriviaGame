@@ -115,41 +115,44 @@ function answered(){
 
 }
 function questionOne() {
-    //create buttons
+    
     
     $(".content").empty();
-
-    
-
-
+    //add question
     let question = trivia.qOne.question
     $(".content").append(question);
+    //buttons - loop array to grab questions and creat 4 buttons
     for (let i = 0; i < trivia.qOne.answers.length; i++){
-    // console.log(test[i])
+     //create buttons   
     let button = $('<button>').text(trivia.qOne.answers[i].text);
     button.addClass(trivia.qOne.answers[i].correct);
     $(".content").append(button);   
 }
-$(".yes").on("click", function(event) {
-    if ($("#button").class = "yes"){
+//if yes
+$("button").on("click", function(event) {
+    console.log("clicked")
+    if ($(this).class = "yes"){
         console.log( "is true")
         
         wins++
         console.log("wins: ",wins)
-    } 
-
+    } else {
+    //show gif
+    losses++
+    console.log("losses: ",losses)
+    }
     // questionTwo()
 });  
-$(".not").on("click", function(event) {
-    if ($("#button").class = "not"){
-        console.log( "is true")
+// $(".not").on("click", function(event) {
+//     if ($("#button").class = "not"){
+//         console.log( "is true")
         
-        losses++
-        console.log("losses: ",losses)
-    } 
-
-    // questionTwo()
-});  
+//         losses++
+//         console.log("losses: ",losses)
+//     } 
+//     //show gif
+//      questionTwo()
+// });  
 
 }
 function questionTwo() {
