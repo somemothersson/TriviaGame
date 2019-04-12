@@ -109,23 +109,48 @@ startPage();
 
 // });
 // content.append(btn1);
+function answered(){
+    
+
+
+}
 function questionOne() {
     //create buttons
+    
     $(".content").empty();
+
+    
+
+
+    let question = trivia.qOne.question
+    $(".content").append(question);
     for (let i = 0; i < trivia.qOne.answers.length; i++){
     // console.log(test[i])
     let button = $('<button>').text(trivia.qOne.answers[i].text);
     button.addClass(trivia.qOne.answers[i].correct);
-    $(".content").append(button);
-    $(".yes").on("click", function(event) {
-        if (button.class = "yes"){
-            console.log( "is true")
-            questionTwo()
-           
-        } 
-    });   
-    
-    
+    $(".content").append(button);   
+}
+$(".yes").on("click", function(event) {
+    if ($("#button").class = "yes"){
+        console.log( "is true")
+        
+        wins++
+        console.log("wins: ",wins)
+    } 
+
+    // questionTwo()
+});  
+$(".no").on("click", function(event) {
+    if ($("#button").class = "no"){
+        console.log( "is true")
+        
+        losses++
+        console.log("losses: ",losses)
+    } 
+
+    // questionTwo()
+});  
+
 }
 function questionTwo() {
     //create buttons
@@ -138,7 +163,7 @@ function questionTwo() {
     $(".yes").on("click", function(event) {
         if (button.class = "yes"){
             console.log( "is true")
-            $(".content").empty();
+            questionTwo()
            
         } 
     });   
@@ -147,7 +172,7 @@ function questionTwo() {
 }
 }
 
-}
+
 function startPage(){
     let startButton = $('<button>').text(trivia.states.start);
     $(".content").append(startButton);
