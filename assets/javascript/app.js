@@ -78,10 +78,7 @@ let trivia = {
 };
 let question = "";
 let choices = $("<choices>")
-let test = ["answer1", "answer2", "answer3","answer4"]
-
 let result = "";
-let gif = "";
 let wins = 0;
 let losses = 0;
 let intro = "Start"
