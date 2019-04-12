@@ -11,33 +11,33 @@ let trivia = {
         question: "This is question 1",
         answers : [{
             text: "answer1",
-            correct: true
+            correct: "yes",
         }, {
             text: "answer2",
-            correct: false
+            correct: "no",
         },{
             text: "answer3",
-            correct: false
+            correct: "no",
         },{
             text: "answer4",
-            correct: false
+            correct: "no",
         }],
         gif: "",
     },
     qTwo: { 
         question: "This is question 2",
         answers: [{
-            text: "answer1",
-            correct: true
+            text: "q2answer1",
+            correct: "no",
         }, {
-            text: "answer2",
-            correct: false
+            text: "q2answer2",
+            correct: "yes",
         }, {
-            text: "answer3",
-            correct: false
+            text: "q2answer3",
+            correct: "no",
         }, {
-            text: "answer4",
-            correct: false
+            text: "q2answer4",
+            correct: "no",
         }],
         gif: "",
     },
@@ -115,16 +115,36 @@ function questionOne() {
     for (let i = 0; i < trivia.qOne.answers.length; i++){
     // console.log(test[i])
     let button = $('<button>').text(trivia.qOne.answers[i].text);
-    button.val(trivia.qOne.answers[i].correct);
+    button.addClass(trivia.qOne.answers[i].correct);
     $(".content").append(button);
-    $("button").on("click", function(event) {
-        if ($(this).val = true){
-            console.log("is true")
-        }
-
+    $(".yes").on("click", function(event) {
+        if (button.class = "yes"){
+            console.log( "is true")
+            questionTwo()
+           
+        } 
     });   
     
     
+}
+function questionTwo() {
+    //create buttons
+    $(".content").empty();
+    for (let i = 0; i < trivia.qTwo.answers.length; i++){
+    // console.log(test[i])
+    let button = $('<button>').text(trivia.qTwo.answers[i].text);
+    button.addClass(trivia.qTwo.answers[i].correct);
+    $(".content").append(button);
+    $(".yes").on("click", function(event) {
+        if (button.class = "yes"){
+            console.log( "is true")
+            $(".content").empty();
+           
+        } 
+    });   
+    
+    
+}
 }
 
 }
