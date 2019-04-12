@@ -14,13 +14,13 @@ let trivia = {
             correct: "yes",
         }, {
             text: "answer2",
-            correct: "no",
+            correct: "not",
         },{
             text: "answer3",
-            correct: "no",
+            correct: "not",
         },{
             text: "answer4",
-            correct: "no",
+            correct: "not",
         }],
         gif: "",
     },
@@ -83,7 +83,7 @@ let test = ["answer1", "answer2", "answer3","answer4"]
 let result = "";
 let gif = "";
 let wins = 0;
-let loses = 0;
+let losses = 0;
 let intro = "Start"
 
 // The Source Family
@@ -140,8 +140,8 @@ $(".yes").on("click", function(event) {
 
     // questionTwo()
 });  
-$(".no").on("click", function(event) {
-    if ($("#button").class = "no"){
+$(".not").on("click", function(event) {
+    if ($("#button").class = "not"){
         console.log( "is true")
         
         losses++
