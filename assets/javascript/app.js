@@ -84,6 +84,8 @@ let losses = 0;
 let comp = 0;
 let intro = "Start"
 const content = $(".content");
+var intervalId;
+let number = 25;
 
 // The Source Family
 // The Peoples Temple
@@ -95,22 +97,8 @@ const content = $(".content");
 //Scientology
 //Family International
 
-var counter = 25;
-var interval = setInterval(function() {
-    counter--;
-    // Display 'counter' wherever you want to display it.
-    // let timer = $<span id="timer">
-    // <span id="time">10</span>
-    // if (counter <= 0) {
-    //  		clearInterval(interval);
-    //   	$('#timer').html("<h3>Count down complete</h3>");  
-    //     return;
-    // }else{
-        $("<div>").html("<span>")
-    	$('#time').text(counter);
-      console.log("Timer --> " + counter);
-    }
-}, 1000);
+
+
 
 $( document ).ready(function() {
 
@@ -121,10 +109,12 @@ startPage();
 function questionPop(question, answer, ) {
     const content = $(".content"); 
     $(".content").empty();
-    count()
+    $(".timer").empty();
+    
        //timer will be displayed
         //timer will start counting down from 25
-    setInterval()
+    number = 25;
+    run(30);
    
     //the question will be displayed 
     // content.append(timer)
@@ -143,8 +133,9 @@ function questionPop(question, answer, ) {
     
     if(answer == "yes"){
     wins++  
-    } else if ( answer == "no"){
+    } else if ( answer == "no" || number <= 0 ){
         losses++ 
+        nextStep()
     }
     comp++
     nextStep()
@@ -198,17 +189,33 @@ function timeUp() {
 function holdingPage (gif, ){
 
 }
-function count() {
 
-    //  TODO: increment time by 1, remember we cant use "this" here.
-    timer--;
-    //  TODO: Get the current time, pass that into the timeConverter function,
-    //        and save the result in a variable.
-    var timeString = timer;
-    //  TODO: Use the variable you just created to show the converted time in the "display" div.
-    $(".content").text(timeString);
+    
+    function run(time) {
+    var intervalId;
+    let number = time;
+    
+        intervalId = setInterval(decrement, 1000);
+    
+   
+    }
+    function decrement() {
 
-  }
+      number--;
+
+      $(".timer").html("<h2>" + number + "</h2>");
+
+      if (number === 0) {
+
+      stop();
+      }
+        
+    }
+    
+    function stop() {
+
+  clearInterval(intervalId);
+}
 
 
 
