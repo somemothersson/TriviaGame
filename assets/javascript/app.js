@@ -112,26 +112,38 @@ function questionPop(question, answer, ) {
     button.addClass(answer[i].correct);
     $(".content").append(button);   
 }
-//if yes
-$(".yes").on("click", function(event) {
+
+    $("button").on("click", function() {
+    var answer= $(this).attr("class");
+    
+    if(answer == "yes"){
     wins++
     comp++
+    nextStep()
+    } else if ( answer == "no"){
+        losses++
+        comp++
+    }
+//if yes
+// $(".yes").on("click", function(event) {
+//     wins++
+//     comp++
     console.log("wins: ",wins)
     console.log("comped", comp)
   
-    nextStep()
-});  
-$(".no").on("click", function(event) {
-    losses++
-    comp++
+//     nextStep()
+// });  
+// $(".no").on("click", function(event) {
+//     losses++
+//     comp++
         console.log("losses: ",losses)
         console.log("comped", comp)
     
-    //show gif
-     nextStep()
+//     //show gif
+//      nextStep()
 });  
 
-}
+ }
     //This fuction along with the comp variable is setup for flow control to allow the questionPop to present data for each question.
 function nextStep () {
     if (comp == 1){
