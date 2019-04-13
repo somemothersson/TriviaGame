@@ -10,17 +10,17 @@ let trivia = {
     qOne: { 
         question: "This is question 1",
         answers : [{
-            text: "answer1",
+            text: "q1answer1",
             correct: "yes",
         }, {
-            text: "answer2",
-            correct: "not",
+            text: "q1answer2",
+            correct: "no",
         },{
-            text: "answer3",
-            correct: "not",
+            text: "q1answer3",
+            correct: "no",
         },{
-            text: "answer4",
-            correct: "not",
+            text: "q1answer4",
+            correct: "no",
         }],
         gif: "",
     },
@@ -44,16 +44,16 @@ let trivia = {
     qThree: { 
         question: "Question 3 What is this",
         answers: [{
-            text: "answer1",
+            text: "q3answer1",
             correct: "yes",
         }, {
-            text: "answer2",
+            text: "q3answer2",
             correct: "no",
         }, {
-            text: "answer3",
+            text: "q3answer3",
             correct: "no",
         }, {
-            text: "answer4",
+            text: "q3answer4",
             correct: "no",
         }],
         gif: "",
@@ -61,16 +61,16 @@ let trivia = {
     qFour: { 
         question: "Question 4 What is this",
         answers: [{
-            text: "answer1",
+            text: "q4answer1",
             correct: "no",
         }, {
-            text: "answer2",
+            text: "q4answer2",
             correct: "no",
         }, {
-            text: "answer3",
+            text: "q4answer3",
             correct: "yes",
         }, {
-            text: "answer4",
+            text: "q4answer4",
             correct: "no",
         }],
         gif: "",
@@ -137,7 +137,7 @@ $(".yes").on("click", function(event) {
   
     nextStep()
 });  
-$(".not").on("click", function(event) {
+$(".no").on("click", function(event) {
     losses++
     comp++
         console.log("losses: ",losses)
@@ -155,7 +155,9 @@ function nextStep () {
     questionPop(trivia.qThree.question, trivia.qThree.answers)
     } else if (comp == 3){
     questionPop(trivia.qFour.question, trivia.qFour.answers)
-    } 
+    } else if (comp == 4){
+        endPage();
+    }    
 }
 
 
@@ -184,15 +186,10 @@ function startPage(){
 }
 
 function endPage(){
-    let startButton = $('<button>').text(trivia.states.start);
-    $(".content").append(startButton);
-    $("button").on("click", function(event) {
-        
-        
+    $(".content").empty();
+    let state = "YOU ARE OVER!"
+    $(".content").text(state);
     
-    
-    
-    });  
 
 }
 
