@@ -42,7 +42,7 @@ let trivia = {
         gif: "",
     },
     qThree: { 
-        question: "What is this",
+        question: "Question 3 What is this",
         answers: [{
             text: "answer1",
             correct: "yes",
@@ -59,7 +59,7 @@ let trivia = {
         gif: "",
     },
     qFour: { 
-        question: "What is this",
+        question: "Question 4 What is this",
         answers: [{
             text: "answer1",
             correct: "no",
@@ -81,6 +81,7 @@ let choices = $("<choices>")
 let result = "";
 let wins = 0;
 let losses = 0;
+let comp = 0;
 let intro = "Start"
 
 // The Source Family
@@ -107,19 +108,14 @@ startPage();
 
 // });
 // content.append(btn1);
-function correct(){
-    
 
-
-}
 // trivia.qOne.question
 // trivia.qOne.answers
 // questionTwo
 //questionPop(trivia.qTwo.question, trivia.qTwo.answers, questionThree)
 //questionPop(trivia.qThree.question, trivia.qThree.answers, questionFour)
 //questionPop(trivia.qFour.question, trivia.qFour.answers, endPage)
-function questionPop(question, answer, quest) {
-    
+function questionPop(question, answer, ) {
     
     $(".content").empty();
     //add question
@@ -135,22 +131,33 @@ function questionPop(question, answer, quest) {
 //if yes
 $(".yes").on("click", function(event) {
     wins++
+    comp++
     console.log("wins: ",wins)
+    console.log("comped", comp)
   
-    nextStep(quest)
+    nextStep()
 });  
 $(".not").on("click", function(event) {
     losses++
+    comp++
         console.log("losses: ",losses)
+        console.log("comped", comp)
     
     //show gif
-     nextStep(quest)
+     nextStep()
 });  
 
 }
 function nextStep () {
-    questionPop(trivia.qTwo.question, trivia.qTwo.answers, questionThree)
+    if (comp == 1){
+    questionPop(trivia.qTwo.question, trivia.qTwo.answers)
+    } else if (comp == 2){
+    questionPop(trivia.qThree.question, trivia.qThree.answers)
+    } else if (comp == 3){
+    questionPop(trivia.qFour.question, trivia.qFour.answers)
+    } 
 }
+
 
 
 function correct () {
@@ -169,7 +176,7 @@ function startPage(){
     $("button").on("click", function(event) {
         
         
-    questionPop(trivia.qOne.question, trivia.qOne.answers, questionTwo)
+    questionPop(trivia.qOne.question, trivia.qOne.answers);
     
     
     });  
