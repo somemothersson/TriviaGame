@@ -45,16 +45,16 @@ let trivia = {
         question: "What is this",
         answers: [{
             text: "answer1",
-            correct: true
+            correct: "yes",
         }, {
             text: "answer2",
-            correct: false
+            correct: "no",
         }, {
             text: "answer3",
-            correct: false
+            correct: "no",
         }, {
             text: "answer4",
-            correct: false
+            correct: "no",
         }],
         gif: "",
     },
@@ -62,16 +62,16 @@ let trivia = {
         question: "What is this",
         answers: [{
             text: "answer1",
-            correct: true
+            correct: "no",
         }, {
             text: "answer2",
-            correct: false
+            correct: "no",
         }, {
             text: "answer3",
-            correct: false
+            correct: "yes",
         }, {
             text: "answer4",
-            correct: false
+            correct: "no",
         }],
         gif: "",
     },
@@ -93,6 +93,7 @@ let intro = "Start"
 //Scientology
 //Family International
 //Document ready
+
 $( document ).ready(function() {
 // let btn01 = trivia.states.start;
 // var content = $(".content")
@@ -106,7 +107,7 @@ startPage();
 
 // });
 // content.append(btn1);
-function answered(){
+function correct(){
     
 
 
@@ -116,7 +117,7 @@ function questionOne() {
     
     $(".content").empty();
     //add question
-    let question = trivia.qOne.question
+    question = trivia.qOne.question
     $(".content").append(question);
     //buttons - loop array to grab questions and creat 4 buttons
     for (let i = 0; i < trivia.qOne.answers.length; i++){
@@ -126,50 +127,95 @@ function questionOne() {
     $(".content").append(button);   
 }
 //if yes
-$("button").on("click", function(event) {
-    console.log("clicked")
-    if ($(this).class = "yes"){
-        console.log( "is true")
-        
-        wins++
-        console.log("wins: ",wins)
-    } else {
-    //show gif
-    losses++
-    console.log("losses: ",losses)
-    }
-    // questionTwo()
+$(".yes").on("click", function(event) {
+    wins++
+    console.log("wins: ",wins)
+  
+    questionTwo()
 });  
-// $(".not").on("click", function(event) {
-//     if ($("#button").class = "not"){
-//         console.log( "is true")
-        
-//         losses++
-//         console.log("losses: ",losses)
-//     } 
-//     //show gif
-//      questionTwo()
-// });  
+$(".not").on("click", function(event) {
+    losses++
+        console.log("losses: ",losses)
+    
+    //show gif
+     questionTwo()
+});  
 
 }
 function questionTwo() {
     //create buttons
     $(".content").empty();
+    question = trivia.qTwo.question
     for (let i = 0; i < trivia.qTwo.answers.length; i++){
     // console.log(test[i])
     let button = $('<button>').text(trivia.qTwo.answers[i].text);
     button.addClass(trivia.qTwo.answers[i].correct);
     $(".content").append(button);
-    $(".yes").on("click", function(event) {
-        if (button.class = "yes"){
-            console.log( "is true")
-            questionTwo()
-           
-        } 
-    });   
-    
-    
 }
+    $(".yes").on("click", function(event) {
+        wins++
+        console.log("wins: ",wins)
+      
+        questionThree()
+    });  
+    $(".not").on("click", function(event) {
+        losses++
+            console.log("losses: ",losses)
+        
+        //show gif
+         questionThree()
+    });  
+
+}
+function questionThree() {
+    //create buttons
+    $(".content").empty();
+    question = trivia.qThree.question
+    for (let i = 0; i < trivia.qThree.answers.length; i++){
+    // console.log(test[i])
+    let button = $('<button>').text(trivia.qThree.answers[i].text);
+    button.addClass(trivia.qThree.answers[i].correct);
+    $(".content").append(button);
+}
+    $(".yes").on("click", function(event) {
+        wins++
+        console.log("wins: ",wins)
+      
+        questionFour()
+    });  
+    $(".not").on("click", function(event) {
+        losses++
+            console.log("losses: ",losses)
+        
+        //show gif
+         questionFour()
+    });  
+
+}
+function questionFour() {
+    //create buttons
+    $(".content").empty();
+    question = trivia.qFour.question
+    for (let i = 0; i < trivia.qFour.answers.length; i++){
+    // console.log(test[i])
+    let button = $('<button>').text(trivia.qFour.answers[i].text);
+    button.addClass(trivia.qFour.answers[i].correct);
+    $(".content").append(button);
+}
+    $(".yes").on("click", function(event) {
+        wins++
+        console.log("wins: ",wins)
+      
+        endPage()
+    });  
+    $(".not").on("click", function(event) {
+        losses++
+            console.log("losses: ",losses)
+        
+        //show gif
+         endPage()
+    });  
+
 }
 
 
@@ -185,15 +231,20 @@ function startPage(){
     });  
 
 }
-// var row = $("<tr>");
 
-// var title = $("<td>").text(response.Title)
-// var year = $("<td>").text(response.Year)
-// var actors = $("<td>").text(response.Actors)
-// content.append(row);
-// row.append(title, year, actors)
+function endPage(){
+    let startButton = $('<button>').text(trivia.states.start);
+    $(".content").append(startButton);
+    $("button").on("click", function(event) {
         
-    //click start button to begin the game - only to begin
+        
+    
+    
+    
+    });  
+
+}
+
 
 
 
