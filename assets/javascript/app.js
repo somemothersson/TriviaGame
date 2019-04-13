@@ -1,5 +1,5 @@
 //declare variables
-let timer = 0;
+let timer = 25;
 let trivia = {
     states: {
         right: "You are Correct!",
@@ -83,6 +83,7 @@ let wins = 0;
 let losses = 0;
 let comp = 0;
 let intro = "Start"
+const content = $(".content");
 
 // The Source Family
 // The Peoples Temple
@@ -94,17 +95,41 @@ let intro = "Start"
 //Scientology
 //Family International
 
+var counter = 25;
+var interval = setInterval(function() {
+    counter--;
+    // Display 'counter' wherever you want to display it.
+    // let timer = $<span id="timer">
+    // <span id="time">10</span>
+    // if (counter <= 0) {
+    //  		clearInterval(interval);
+    //   	$('#timer').html("<h3>Count down complete</h3>");  
+    //     return;
+    // }else{
+        $("<div>").html("<span>")
+    	$('#time').text(counter);
+      console.log("Timer --> " + counter);
+    }
+}, 1000);
 
 $( document ).ready(function() {
 
 startPage();
 
+
+
 function questionPop(question, answer, ) {
-    
+    const content = $(".content"); 
     $(".content").empty();
+    count()
+       //timer will be displayed
+        //timer will start counting down from 25
+    setInterval()
    
     //the question will be displayed 
+    // content.append(timer)
     $(".content").append(question);
+
     //buttons - loop array to grab questions and creat 4 buttons
     for (let i = 0; i < answer.length; i++){
      //create 4 buttons, adding class to store the correct answer
@@ -117,30 +142,15 @@ function questionPop(question, answer, ) {
     var answer= $(this).attr("class");
     
     if(answer == "yes"){
-    wins++
+    wins++  
+    } else if ( answer == "no"){
+        losses++ 
+    }
     comp++
     nextStep()
-    } else if ( answer == "no"){
-        losses++
-        comp++
-    }
-//if yes
-// $(".yes").on("click", function(event) {
-//     wins++
-//     comp++
-    console.log("wins: ",wins)
-    console.log("comped", comp)
-  
-//     nextStep()
-// });  
-// $(".no").on("click", function(event) {
-//     losses++
-//     comp++
-        console.log("losses: ",losses)
-        console.log("comped", comp)
-    
-//     //show gif
-//      nextStep()
+    //related gif will display to the question/answer
+        //go to the next question automatically after 3-5 seconds
+
 });  
 
  }
@@ -182,21 +192,35 @@ function endPage(){
     
 
 }
+function timeUp() {
+    $("#time-left").append($("<h4>").text("times up!"))
+}    
+function holdingPage (gif, ){
 
+}
+function count() {
+
+    //  TODO: increment time by 1, remember we cant use "this" here.
+    timer--;
+    //  TODO: Get the current time, pass that into the timeConverter function,
+    //        and save the result in a variable.
+    var timeString = timer;
+    //  TODO: Use the variable you just created to show the converted time in the "display" div.
+    $(".content").text(timeString);
+
+  }
 
 
 
 //function question load
-        //timer will be displayed
-        //timer will start counting down from 25
+     
     
   
     //If the correct answer is clicked 
         //display if the choice was correct or incorrect for 5 seconds
         //timer will stop
         //1 point will be added to total hidden score, displayed only at the end
-        //related gif will display to the question/answer
-        //go to the next question automatically after 3-5 seconds
+        
     //else the incorrect answer is chosen or no answer is chosen
         //timer will stop
         //1 point will be subtracted from total hidden score, displayed only at the end
