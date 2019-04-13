@@ -114,7 +114,7 @@ function questionPop(question, answer, ) {
        //timer will be displayed
         //timer will start counting down from 25
     number = 25;
-    run(30);
+    run();
    
     //the question will be displayed 
     // content.append(timer)
