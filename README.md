@@ -1,7 +1,7 @@
 # TriviaGame
 - [x] Build out folder structure
 - [x] Create `Readme`
-- [] Submit Links to BCS
+- [x] Submit Links to BCS
 - [x] Create Basic HTML Layout
 - [] Get Javascript and jQuery funcationality Working
 - [] Style
