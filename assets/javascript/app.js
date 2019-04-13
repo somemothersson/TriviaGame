@@ -96,30 +96,14 @@ let intro = "Start"
 //Document ready
 
 $( document ).ready(function() {
-// let btn01 = trivia.states.start;
-// var content = $(".content")
 
-//function click to start game
-//reset function is the start button
-//function to load question set
 startPage();
-// $("#button").on("click", function){
-//     questionOne()
 
-// });
-// content.append(btn1);
-
-// trivia.qOne.question
-// trivia.qOne.answers
-// questionTwo
-//questionPop(trivia.qTwo.question, trivia.qTwo.answers, questionThree)
-//questionPop(trivia.qThree.question, trivia.qThree.answers, questionFour)
-//questionPop(trivia.qFour.question, trivia.qFour.answers, endPage)
 function questionPop(question, answer, ) {
     
     $(".content").empty();
-    //add question
-    
+   
+    //the question will be displayed 
     $(".content").append(question);
     //buttons - loop array to grab questions and creat 4 buttons
     for (let i = 0; i < answer.length; i++){
@@ -148,27 +132,21 @@ $(".no").on("click", function(event) {
 });  
 
 }
+    //This fuction along with the comp variable is setup for flow control to allow the questionPop to present data for each question.
 function nextStep () {
     if (comp == 1){
+        //question load(two)
     questionPop(trivia.qTwo.question, trivia.qTwo.answers)
     } else if (comp == 2){
+        //question load(three)
     questionPop(trivia.qThree.question, trivia.qThree.answers)
     } else if (comp == 3){
+        //question load(four)
     questionPop(trivia.qFour.question, trivia.qFour.answers)
     } else if (comp == 4){
+        //after 4 questions the game will end and show score.
         endPage();
     }    
-}
-
-
-
-function correct () {
-
-
-}
-function incorrect () {
-
-    
 }
 
 
@@ -199,7 +177,7 @@ function endPage(){
 //function question load
         //timer will be displayed
         //timer will start counting down from 25
-    //the question will be displayed 
+    
     //4 answer buttons will be displayed
     //If the correct answer is clicked 
         //display if the choice was correct or incorrect for 5 seconds
