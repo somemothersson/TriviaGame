@@ -93,7 +93,7 @@ let intro = "Start"
 //The Eckankar
 //Scientology
 //Family International
-//Document ready
+
 
 $( document ).ready(function() {
 
@@ -107,7 +107,7 @@ function questionPop(question, answer, ) {
     $(".content").append(question);
     //buttons - loop array to grab questions and creat 4 buttons
     for (let i = 0; i < answer.length; i++){
-     //create buttons   
+     //create 4 buttons, adding class to store the correct answer
     let button = $('<button>').text(answer[i].text);
     button.addClass(answer[i].correct);
     $(".content").append(button);   
@@ -178,7 +178,7 @@ function endPage(){
         //timer will be displayed
         //timer will start counting down from 25
     
-    //4 answer buttons will be displayed
+  
     //If the correct answer is clicked 
         //display if the choice was correct or incorrect for 5 seconds
         //timer will stop
@@ -191,11 +191,7 @@ function endPage(){
         //display of the correct for 5 seconds
             //related gif will display to the question/answer
         //go to the next question automatically after 3-5 seconds
-//function question load(one)
-//function question load(two)
-//function question load(three)
-//function question load(four)
-//function question complete
 
-//after 5 questions the game will end and show score.
+
+
 });
