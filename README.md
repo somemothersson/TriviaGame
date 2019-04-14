@@ -14,7 +14,7 @@
 - [x] Create `Readme`
 - [x] Submit Links to BCS
 - [x] Create Basic HTML Layout
-- [] Get Javascript and jQuery funcationality Working `See Above`
+- [] Get Javascript and jQuery funcationality Working `See Above - working about 80%`
 - [] Style
 - [] Test
 - [x] [Add to Portfolio](https://somemothersson.github.io/HW1-Portfolio/Basic-Portfolio/index.html)
