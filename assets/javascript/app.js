@@ -87,15 +87,6 @@ const content = $(".content");
 var intervalId;
 let number = 25;
 
-// The Source Family
-// The Peoples Temple
-// Heavens Gate https://media.giphy.com/media/KPd2gRH4Q4Oqc/giphy.gif
-// Rajneeshpuram
-
-//branch dividians
-//The Eckankar
-//Scientology
-//Family International
 
 
 
@@ -190,6 +181,7 @@ function holdingPage (status, gif ){
     reset()
     if (comp == 1){
         //question load(two)
+        $("content").append("src"gif)
     questionPop(trivia.qOne.question, trivia.qOne.answers);
     questionPop(trivia.qTwo.question, trivia.qTwo.answers)
     } else if (comp == 2){
