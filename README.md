@@ -1,12 +1,23 @@
+### Items outstanding as of 6:35PM 14APR2019
+* `TIMER` 
+  * Unable to get the timer to reset when the next set of questions load
+  * Does not stop running
+* `HOLDING PAGE`
+  * Didn't get far enough to get this working right, but with the logic I have created to go from question to question, I know with      more time, I will have it working
+* `Styling`
+  * Was waiting to get all Javascript working before I got the styling
+
+
+
 # TriviaGame
 - [x] Build out folder structure
 - [x] Create `Readme`
 - [x] Submit Links to BCS
 - [x] Create Basic HTML Layout
-- [] Get Javascript and jQuery funcationality Working
+- [] Get Javascript and jQuery funcationality Working `See Above`
 - [] Style
 - [] Test
-- [] [Add to Portfolio](https://somemothersson.github.io/HW1-Portfolio/Basic-Portfolio/index.html)
+- [x] [Add to Portfolio](https://somemothersson.github.io/HW1-Portfolio/Basic-Portfolio/index.html)
 
 
 ### Overview
@@ -29,40 +40,4 @@ In this assignment, You'll create a Trivia game using JavaScript for the logic a
 
 * On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
 
-### Reminder: Submission on BCS
 
-* Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below.
-
-- - -
-
-### Create a README.md
-
-Add a `README.md` to your repository describing the project. Here are some resources for creating your `README.md`. Here are some resources to help you along the way:
-
-* [About READMEs](https://help.github.com/articles/about-readmes/)
-
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-- - -
-
-### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
-
-- - -
-
-### A Few Last Notes
-
-* Styling and theme are completely up to you. Get creative!
-
-* Remember to deploy your assignment to Github Pages.
-
-*If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-  **Good Luck!**
