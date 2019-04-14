@@ -8,72 +8,72 @@ let trivia = {
         start: "Click here to get started"
     },
     qOne: { 
-        question: "This is question 1",
+        question: "What is the capital of Montana?",
         answers : [{
-            text: "q1answer1",
+            text: "Helena",
             correct: "yes",
         }, {
-            text: "q1answer2",
+            text: "Barstow",
             correct: "no",
         },{
-            text: "q1answer3",
+            text: "Bozeman",
             correct: "no",
         },{
-            text: "q1answer4",
+            text: "Oro y Plata",
             correct: "no",
         }],
-        gif: "",
+        gif: "https://media.giphy.com/media/KPd2gRH4Q4Oqc/giphy.gif",
     },
     qTwo: { 
-        question: "This is question 2",
+        question: "What is the Capital of Texas",
         answers: [{
-            text: "q2answer1",
+            text: "Chainsaw Massacre",
             correct: "no",
         }, {
-            text: "q2answer2",
+            text: "Luckenbach",
             correct: "yes",
         }, {
-            text: "q2answer3",
-            correct: "no",
+            text: "Austin",
+            correct: "yes",
         }, {
-            text: "q2answer4",
+            text: "Dallas",
             correct: "no",
         }],
-        gif: "",
+        gif: "https://media.giphy.com/media/KPd2gRH4Q4Oqc/giphy.gif",
     },
     qThree: { 
-        question: "Question 3 What is this",
+        question: "What is the capital of California",
         answers: [{
-            text: "q3answer1",
+            text: "San Diego",
+            correct: "no",
+        }, {
+            text: "Sacramento",
             correct: "yes",
         }, {
-            text: "q3answer2",
+            text: "Santa Clause",
             correct: "no",
         }, {
-            text: "q3answer3",
-            correct: "no",
-        }, {
-            text: "q3answer4",
+            text: "Hollywood",
             correct: "no",
         }],
-        gif: "",
+        gif: "https://media.giphy.com/media/3EiNpweH34XGoQcq9Q/giphy.gif",
     },
     qFour: { 
-        question: "Question 4 What is this",
+        question: "What is the Capital of New Jersey",
         answers: [{
-            text: "q4answer1",
+            text: "Ashbury Park",
             correct: "no",
         }, {
-            text: "q4answer2",
-            correct: "no",
-        }, {
-            text: "q4answer3",
+            text: "Trenton",
             correct: "yes",
         }, {
-            text: "q4answer4",
+            text: "Atlantic City",
+            correct: "yes",
+        }, {
+            text: "Jersey City",
             correct: "no",
         }],
-        gif: "",
+        gif: "https://media.giphy.com/media/SXeezvYc8uRUc/giphy.gif",
     },
 };
 let question = "";
@@ -89,7 +89,7 @@ let number = 25;
 
 // The Source Family
 // The Peoples Temple
-// Heavens Gate
+// Heavens Gate https://media.giphy.com/media/KPd2gRH4Q4Oqc/giphy.gif
 // Rajneeshpuram
 
 //branch dividians
@@ -186,11 +186,24 @@ function endPage(){
 
 }
    
-function holdingPage (gif, ){
-    if 
-    correct 
+function holdingPage (status, gif ){
+    reset()
+    if (comp == 1){
+        //question load(two)
+    questionPop(trivia.qOne.question, trivia.qOne.answers);
+    questionPop(trivia.qTwo.question, trivia.qTwo.answers)
+    } else if (comp == 2){
+        //question load(three)
+    questionPop(trivia.qThree.question, trivia.qThree.answers)
+    } else if (comp == 3){
+        //question load(four)
+    questionPop(trivia.qFour.question, trivia.qFour.answers)
+    } else if (comp == 4){
+        //after 4 questions the game will end and show score.
+        endPage();
+    }    
 
-    
+
 
 }
 
