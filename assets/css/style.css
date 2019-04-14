@@ -14,8 +14,8 @@
 body {
     width: 100%;
     margin: 0 auto;
-    background-image: url(/Basic-Portfolio/Assests/images/qbkls.png);
-    background-repeat: repeat;
+    /* background-image: url(/Basic-Portfolio/Assests/images/qbkls.png);
+    background-repeat: repeat; */
    
 }
 header{
@@ -38,6 +38,8 @@ button {
     border: none;
     color: white;
     padding: 15px 32px;
+    width: 230px;
+
     text-align: center;
     text-decoration: none;
     display: inline-block;
