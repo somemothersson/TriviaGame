@@ -108,12 +108,11 @@ startPage();
 
 function questionPop(question, answer, ) {
     const content = $(".content"); 
-    $(".content").empty();
-    $(".timer").empty();
-    
+   
+    reset()
        //timer will be displayed
         //timer will start counting down from 25
-    number = 25;
+    // number = 25;
     run();
    
     //the question will be displayed 
@@ -135,10 +134,13 @@ function questionPop(question, answer, ) {
     wins++  
     } else if ( answer == "no" || number <= 0 ){
         losses++ 
+        stop();
         nextStep()
     }
     comp++
     nextStep()
+    stop();
+    console.log(comp)
     //related gif will display to the question/answer
         //go to the next question automatically after 3-5 seconds
 
@@ -183,40 +185,47 @@ function endPage(){
     
 
 }
-function timeUp() {
-    $("#time-left").append($("<h4>").text("times up!"))
-}    
+   
 function holdingPage (gif, ){
+    if 
+    correct 
+
+    
 
 }
 
-    
-    function run(time) {
-    var intervalId;
-    let number = time;
-    
-        intervalId = setInterval(decrement, 1000);
-    
-   
-    }
-    function decrement() {
 
-      number--;
+function run(number) {
+var intervalId;
 
-      $(".timer").html("<h2>" + number + "</h2>");
 
-      if (number === 0) {
+    intervalId = setInterval(decrement, 1000);
 
-      stop();
-      }
-        
+
+}
+function decrement() {
+
+    number--;
+
+    $(".timer").html("<h2>" + "You have " + number + " seconds remaining" + "</h2>");
+
+    if (number === 0) {
+
+    stop();
     }
     
-    function stop() {
+}
+
+function stop() {
 
   clearInterval(intervalId);
 }
-
+function reset(){
+$(".content").empty();
+$(".timer").empty();
+clearInterval(intervalId)
+let number = 25;
+}
 
 
 //function question load
