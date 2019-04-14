@@ -1,5 +1,6 @@
 //declare variables
 let timer = 25;
+//This object stores much of the operation of the game
 let trivia = {
     states: {
         right: "You are Correct!",
@@ -177,27 +178,27 @@ function endPage(){
 
 }
    
-function holdingPage (status, gif ){
-    reset()
-    if (comp == 1){
-        //question load(two)
-        $("content").append("src"gif)
-    questionPop(trivia.qOne.question, trivia.qOne.answers);
-    questionPop(trivia.qTwo.question, trivia.qTwo.answers)
-    } else if (comp == 2){
-        //question load(three)
-    questionPop(trivia.qThree.question, trivia.qThree.answers)
-    } else if (comp == 3){
-        //question load(four)
-    questionPop(trivia.qFour.question, trivia.qFour.answers)
-    } else if (comp == 4){
-        //after 4 questions the game will end and show score.
-        endPage();
-    }    
+// function holdingPage (status, gif ){
+//     reset()
+//     if (comp == 1){
+//         //question load(two)
+//         $("content").append("src"gif)
+//     questionPop(trivia.qOne.question, trivia.qOne.answers);
+//     questionPop(trivia.qTwo.question, trivia.qTwo.answers)
+//     } else if (comp == 2){
+//         //question load(three)
+//     questionPop(trivia.qThree.question, trivia.qThree.answers)
+//     } else if (comp == 3){
+//         //question load(four)
+//     questionPop(trivia.qFour.question, trivia.qFour.answers)
+//     } else if (comp == 4){
+//         //after 4 questions the game will end and show score.
+//         endPage();
+//     }    
 
 
 
-}
+// }
 
 
 function run(number) {
