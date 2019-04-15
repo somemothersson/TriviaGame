@@ -101,7 +101,7 @@ startPage();
 
 function questionPop(question, answer, ) {
     const content = $(".content"); 
-    temp  = "";
+   
     
     reset()
        //timer will be displayed
