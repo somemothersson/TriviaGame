@@ -131,13 +131,13 @@ function questionPop(question, answer, ) {
    
     } else {
         losses++ 
-        stop();
+      
         holdingPage()
         temp = false;
     }
     comp++
     holdingPage()
-    stop();
+  
     console.log(comp)
     console.log(temp)
     //related gif will display to the question/answer
@@ -148,9 +148,6 @@ function questionPop(question, answer, ) {
  }
  function holdingPage (){
     reset();
-    
-
-    
     
     if ( temp == false){
         $(".content").append(trivia.states.wrong)
@@ -180,7 +177,7 @@ function nextStep () {
     }    
 }
 
-
+//start page click
 function startPage(){
     let startButton = $('<button>').text(trivia.states.start);
     $(".content").append(startButton);
@@ -213,41 +210,42 @@ function endPage(){
 
 
 
-
+//timer to change mark incorrect when no answer chosen in 25 seconds
 function twentyFiveSeconds() {
     holdingPage()
   }
 
-
+//timer to load new question after showing correct or incorrect
 function fiveSeconds() {
     nextStep()
   }
 
-function run(number) {
-var intervalId;
+//showing the timer on the screen, cannot get to work correctly
+// function run(number) {
+// var intervalId;
 
 
-    intervalId = setInterval(decrement, 1000);
+//     intervalId = setInterval(decrement, 1000);
 
 
-}
-function decrement() {
+// }
+// function decrement() {
 
-    number--;
+//     number--;
 
-    $(".timer").html("<h2>" + "You have " + number + " seconds remaining" + "</h2>");
+//     $(".timer").html("<h2>" + "You have " + number + " seconds remaining" + "</h2>");
 
-    if (number === 0) {
+//     if (number === 0) {
 
-    stop();
-    }
+//     stop();
+//     }
     
-}
+// }
 
-function stop() {
-    number = 25;
-  clearInterval(intervalId);
-}
+// function stop() {
+//     number = 25;
+//   clearInterval(intervalId);
+// }
 function reset(){
 $(".content").empty();
 $(".timer").empty();
