@@ -87,7 +87,7 @@ let intro = "Start"
 const content = $(".content");
 let intervalId;
 let number = 25;
-let temp = "";
+let temp = false;
 
 
 
@@ -102,12 +102,13 @@ startPage();
 function questionPop(question, answer, ) {
     const content = $(".content"); 
     temp  = "";
-   
+    
     reset()
        //timer will be displayed
         //timer will start counting down from 25
     // number = 25;
     run();
+    setTimeout(twentyFiveSeconds,25000);
    
     //the question will be displayed 
     // content.append(timer)
@@ -126,29 +127,35 @@ function questionPop(question, answer, ) {
     
     if(answer == "yes"){
     wins++
-    temp = true
-    } else if ( answer == "no" || number <= 0 ){
+    temp = true;
+   
+    } else {
         losses++ 
         stop();
         holdingPage()
-        temp = false
+        temp = false;
     }
     comp++
     holdingPage()
     stop();
     console.log(comp)
+    console.log(temp)
     //related gif will display to the question/answer
         //go to the next question automatically after 3-5 seconds
 
 });  
 
  }
- function holdingPage ( ){
+ function holdingPage (){
     $(".content").empty();
 
     
-    $(".content").append(trivia.states.right)
     
+    if ( temp == false){
+        $(".content").append(trivia.states.wrong)
+    } else {
+        $(".content").append(trivia.states.right)
+    }    
     let img = $('<img>').attr("src", trivia.qTwo.gif);
     $(".content").append("<br>")
     $(".content").append(img)
@@ -207,6 +214,9 @@ function endPage(){
 
 // }
 //function stepper
+function twentyFiveSeconds() {
+    holdingPage()
+  }
 
 
 function fiveSeconds() {
