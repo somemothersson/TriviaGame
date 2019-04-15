@@ -1,6 +1,7 @@
 ### Items outstanding as of 6:35PM 14APR2019
 * `TIMER` 
-  * Unable to get the timer to reset when the next set of questions load
+  * Unable to get the `on screen` timer to stay at the appropriate speed
+    * the 25 seconds to make a choice function does time out and show incorrect and does reset
   * Does not stop running
 * `Styling`
   * Was waiting to get all Javascript working before I got the styling

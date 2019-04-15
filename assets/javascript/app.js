@@ -147,7 +147,8 @@ function questionPop(question, answer, ) {
 
  }
  function holdingPage (){
-    $(".content").empty();
+    reset();
+    
 
     
     
