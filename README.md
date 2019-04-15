@@ -2,8 +2,6 @@
 * `TIMER` 
   * Unable to get the timer to reset when the next set of questions load
   * Does not stop running
-* `HOLDING PAGE`
-  * Didn't get far enough to get this working right, but with the logic I have created to go from question to question, I know with      more time, I will have it working
 * `Styling`
   * Was waiting to get all Javascript working before I got the styling
 

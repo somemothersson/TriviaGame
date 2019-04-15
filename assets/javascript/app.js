@@ -212,8 +212,7 @@ function endPage(){
 
 
 
-// }
-//function stepper
+
 function twentyFiveSeconds() {
     holdingPage()
   }
@@ -245,7 +244,7 @@ function decrement() {
 }
 
 function stop() {
-
+    number = 25;
   clearInterval(intervalId);
 }
 function reset(){
