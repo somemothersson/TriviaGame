@@ -85,8 +85,9 @@ let losses = 0;
 let comp = 0;
 let intro = "Start"
 const content = $(".content");
-var intervalId;
+let intervalId;
 let number = 25;
+let temp = "";
 
 
 
@@ -100,6 +101,7 @@ startPage();
 
 function questionPop(question, answer, ) {
     const content = $(".content"); 
+    temp  = "";
    
     reset()
        //timer will be displayed
@@ -123,14 +125,16 @@ function questionPop(question, answer, ) {
     var answer= $(this).attr("class");
     
     if(answer == "yes"){
-    wins++  
+    wins++
+    temp = true
     } else if ( answer == "no" || number <= 0 ){
         losses++ 
         stop();
-        nextStep()
+        holdingPage()
+        temp = false
     }
     comp++
-    nextStep()
+    holdingPage()
     stop();
     console.log(comp)
     //related gif will display to the question/answer
@@ -139,6 +143,18 @@ function questionPop(question, answer, ) {
 });  
 
  }
+ function holdingPage ( ){
+    $(".content").empty();
+
+    
+    $(".content").append(trivia.states.right)
+    
+    let img = $('<img>').attr("src", trivia.qTwo.gif);
+    $(".content").append("<br>")
+    $(".content").append(img)
+    setTimeout(fiveSeconds,5000);
+    
+}
     //This fuction along with the comp variable is setup for flow control to allow the questionPop to present data for each question.
 function nextStep () {
     if (comp == 1){
@@ -178,28 +194,24 @@ function endPage(){
 
 }
    
-// function holdingPage (status, gif ){
-//     reset()
-//     if (comp == 1){
-//         //question load(two)
-//         $("content").append("src"gif)
-//     questionPop(trivia.qOne.question, trivia.qOne.answers);
-//     questionPop(trivia.qTwo.question, trivia.qTwo.answers)
-//     } else if (comp == 2){
-//         //question load(three)
-//     questionPop(trivia.qThree.question, trivia.qThree.answers)
-//     } else if (comp == 3){
-//         //question load(four)
-//     questionPop(trivia.qFour.question, trivia.qFour.answers)
-//     } else if (comp == 4){
-//         //after 4 questions the game will end and show score.
-//         endPage();
-//     }    
+
+
+
+
+
+
+
+//   
 
 
 
 // }
+//function stepper
 
+
+function fiveSeconds() {
+    nextStep()
+  }
 
 function run(number) {
 var intervalId;
